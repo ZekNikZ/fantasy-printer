@@ -36,7 +36,7 @@ object SleeperService : IService {
             }
 
             if (hasUpdates) {
-                ManagerService.onSleeperUpdates(print = !draftLoading)
+                ManagerService.onSleeperUpdates(confirmPrint = draftLoading)
             }
         }
         get() = synchronized(draftPickLock) {
