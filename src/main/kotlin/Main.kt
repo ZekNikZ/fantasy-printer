@@ -11,9 +11,9 @@ fun main() {
         SleeperService,
         UIService,
     ).forEach(IService::initialize)
+}
 
-    UIService.thread.join()
-
+fun shutdown() {
     listOf(
         ManagerService,
         PrintingService,

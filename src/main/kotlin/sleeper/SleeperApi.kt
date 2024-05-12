@@ -19,6 +19,7 @@ class SleeperApi {
             json(Json {
                 explicitNulls = false
                 isLenient = true
+                ignoreUnknownKeys = true
             })
         }
     }

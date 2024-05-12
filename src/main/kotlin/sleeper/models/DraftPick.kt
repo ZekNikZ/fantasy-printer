@@ -8,7 +8,7 @@ import kotlinx.serialization.Serializable
 data class DraftPick(
     val player_id: String,
     val picked_by: String,
-    val roster_id: String,
+    val roster_id: String?,
     val round: Int,
     val draft_slot: Int,
     val pick_no: Int,

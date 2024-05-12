@@ -8,17 +8,17 @@ import kotlinx.serialization.Serializable
 data class Draft(
     val type: String,
     val status: String,
-    val start_time: Long,
+    val start_time: Long?,
     val sport: String,
     val settings: DraftSettings,
     val season_type: String,
     val season: String,
     val metadata: DraftMetadata,
-    val league_id: String,
-    val last_picked: Long,
-    val last_message_time: Long,
+    val league_id: String?,
+    val last_picked: Long?,
+    val last_message_time: Long?,
     val last_message_id: String,
-    val draft_order: Map<String, Int>,
+    val draft_order: Map<String, Int>?,
     val slot_to_roster_id: Map<String, Int>,
     val draft_id: String,
     val created: Long,
@@ -53,7 +53,10 @@ data class DraftSettings(
 
 @Serializable
 data class DraftMetadata(
+    val type: String?,
+    val mock_traded_picks: String?,
     val scoring_type: String,
     val name: String,
     val description: String,
+    val league_id: String?,
 )

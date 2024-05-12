@@ -46,8 +46,12 @@ object SleeperService : IService {
     override fun initialize() {
         thread = Thread {
             while (!shutdownFlag) {
-                Thread.sleep(5000)
-                fetchLatestPicks()
+                Thread.sleep(1000)
+                try {
+                    fetchLatestPicks()
+                } catch (e: Exception) {
+                    System.err.println(e)
+                }
             }
         }.apply { start() }
     }
